@@ -1,0 +1,12 @@
+attrs==24.3.0
+brother-ql==0.9.4
+certifi==2024.12.14
+charset-normalizer==3.4.0
+click==8.1.7
+future==1.0.0
+idna==3.10
+packbits==0.6
+pillow==11.0.0
+pyusb==1.2.1
+requests==2.32.3
+urllib3==2.2.3
