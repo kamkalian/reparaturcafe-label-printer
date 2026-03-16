@@ -11,12 +11,16 @@ load_dotenv()
 BASE_URL = os.getenv("BASE_URL", "").rstrip("/")
 USERNAME = os.getenv("USERNAME", "")
 PASSWORD = os.getenv("PASSWORD", "")
+PRINTER_IDENTIFIER = os.getenv("PRINTER_IDENTIFIER", "")
 
+if not USERNAME:
+    raise ValueError("USERNAME ist nicht in der .env Datei gesetzt.")
+if not PASSWORD:
+    raise ValueError("PASSWORD ist nicht in der .env Datei gesetzt.")
+if not PRINTER_IDENTIFIER:
+    raise ValueError("PRINTER_IDENTIFIER ist nicht in der .env Datei gesetzt.")
 if not BASE_URL:
     raise ValueError("BASE_URL ist nicht in der .env Datei gesetzt.")
-
-# Using USB connected printer 
-PRINTER_IDENTIFIER = '/dev/usb/lp1'
 
 printer = BrotherQLRaster('QL-800')
 def sendToPrinter():
